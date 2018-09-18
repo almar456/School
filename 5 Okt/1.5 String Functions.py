@@ -12,19 +12,19 @@ def removeLeestekens(woordenlijst: list):
                 for x in mutable:
                     lcount = lcount + 1
                     newword = newword + x
-                woordenlijst[count] = newword
+                woordenlijst[index] = newword
             elif ',' in mutable:
                 mutable[mutable.index(',')] = ''
                 for x in mutable:
                     lcount = lcount + 1
                     newword = newword + x
-                woordenlijst[count] = newword
+                woordenlijst[index] = newword
             elif '!' in mutable:
                 mutable[mutable.index('!')] = ''
                 for x in mutable:
                     lcount = lcount + 1
                     newword = newword + x
-                woordenlijst[count] = newword
+                woordenlijst[index] = newword
             elif '?' in mutable:
                 mutable[mutable.index('?')] = ''
                 for x in mutable:

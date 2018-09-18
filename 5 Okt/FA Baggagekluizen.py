@@ -14,6 +14,7 @@ def nieuwe_kluis():
     open('Files/Kluizen.txt').close()
     lijst = file.replace('\n',';')
     lijst = lijst.split(';')
+    kluisgegeven = False
     for x in lijst:
         if x in kluis_lijst:
             kluis_lijst[kluis_lijst.index(x)] = 0
@@ -28,8 +29,11 @@ def nieuwe_kluis():
                     print('De code is opgeslagen, je hebt kluis '+str(kluis_assign)+' gekregen.\n')
                     open('Files/Kluizen.txt','a').write(str(kluis_assign)+';'+code+'\n')
                     open('Files/Kluizen.txt').close()
+                    kluisgegeven = True
                     break
             break
+    if kluisgegeven == False:
+        print('Er zijn geen kluizen beschikbaar.')
 
 def kluis_openen():
     correct = 0
@@ -70,26 +74,28 @@ def kluis_verwijderen():
         else:
             print('Die combinatie van kluisnummer en kluiscode is niet gevonden.\nJe hebt nog '+str(3-int(y))+' pogingen.')
 
-while True:                                                 #Mainloop
-    print('1: Ik wil weten hoeveel kluizen nog vrij zijn.\n2: Ik wil een nieuwe kluis\n3: Ik wil even iets uit mijn kluis halen\n4: Ik geef mijn kluis terug\n5: Ik wil stoppen\n')
-    menu = input()
-    try:
+def menu():
+    while True:
+        print('1: Ik wil weten hoeveel kluizen nog vrij zijn.\n2: Ik wil een nieuwe kluis\n3: Ik wil even iets uit mijn kluis halen\n4: Ik geef mijn kluis terug\n5: Ik wil stoppen\n')
+        menu = input()
+        try:
             menu = int(menu)
-    except:
-        print('Dat is geen correct nummer.')
-        sys.exit(0)
+        except:
+            print('Dat is geen correct nummer.')
+            sys.exit(0)
 
-    if (menu < 1) or (menu > 5):
-        print('Dat is geen correct nummer.')
-        sys.exit(0)
-    elif menu == 1:
-        aantal_vrij = toon_aantal_kluizen_vrij()
-        print('Er zijn op dit moment '+str(aantal_vrij)+' kluizen beschikbaar.\n')
-    elif menu == 2:
-        nieuwe_kluis()
-    elif menu == 3:
-        kluis_openen()
-    elif menu == 4:
-        kluis_verwijderen()
-    elif menu == 5:
-        break
+        if (menu < 1) or (menu > 5):
+            print('Dat is geen correct nummer.')
+            sys.exit(0)
+        elif menu == 1:
+            aantal_vrij = toon_aantal_kluizen_vrij()
+            print('Er zijn op dit moment '+str(aantal_vrij)+' kluizen beschikbaar.\n')
+        elif menu == 2:
+            nieuwe_kluis()
+        elif menu == 3:
+            kluis_openen()
+        elif menu == 4:
+            kluis_verwijderen()
+        elif menu == 5:
+            break
+menu()
