@@ -1,10 +1,10 @@
 def standaardprijs(afstandkm: float):
     if (afstandkm <= 50) and (afstandkm > 0):
-        prijs = float(afstandkm*0.8)
+        prijs = afstandkm*0.8
     elif (afstandkm <= 0):
-        prijs = 0
+        prijs = 0.0
     else:
-        prijs = float(15.0+(0.6*afstandkm))
+        prijs = 15.0+(0.6*afstandkm)
     return prijs
 
 def ritprijs(leeftijd: int, weekendrit: bool, afstandkm: float):

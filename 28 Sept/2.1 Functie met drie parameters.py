@@ -1,4 +1,3 @@
 def som(getal1, getal2, getal3):
-    print(getal1+getal2+getal3)
-    return
+    return(getal1+getal2+getal3)
 print(som(1,3,8))
