@@ -12,5 +12,4 @@ def gemiddelde_van_alle_studenten(studentencijfers):
    return antw
 
 print(gemiddelde_per_student(studentencijfers))
-
 print(gemiddelde_van_alle_studenten(studentencijfers))
