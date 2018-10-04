@@ -2,7 +2,7 @@ def new_password(oldpassword: str,newpassword: str):
     if (oldpassword == newpassword) or (len(newpassword)<6):
         return False
     else:
-        for x in range(0,9):
+        for x in range(0,10):
             if str(x) in newpassword:
                 return True
         return False

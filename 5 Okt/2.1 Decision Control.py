@@ -7,4 +7,4 @@ def seizoen(maand: int):
         return'Zomer'
     elif (maand >= 9) and (maand < 12):
         return'Herfst'
-print(seizoen(12))
+print(seizoen(5))
