@@ -1,6 +1,5 @@
 def namen():
     dictionary = {}
-    index = 0
     while True:
         naam = input('Volgende naam: ')
         if naam in dictionary:
